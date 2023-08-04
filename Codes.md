@@ -34,10 +34,12 @@ Total payload:
    |     | | | | ^ Always 8
    |     | | | ^ Always 4
    |     | | ^ Fan Speed
-   |     | ^ Mode
+   |     | ^ Mode (AC = 1, H = 2, DH = 4, F = 8)
    ^-----^ Command
 
 Commands:
-0x12 = off
-Ends in 8 = on
-Temperature
+Ends in 0x8 = on
+Ends in 0x2 = off
+
+One byte for command type, followed by payload.
+
